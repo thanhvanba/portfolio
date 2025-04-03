@@ -1,0 +1,25 @@
+@keyframes typing {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @layer utilities {
+    .animate-typing {
+      animation: typing 0.5s steps(30, end);
+    }
+  
+    .animate-blink {
+      animation: blink 0.7s step-end infinite;
+    }
+  }
+  

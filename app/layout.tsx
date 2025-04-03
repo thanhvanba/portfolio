@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Header from "./components/header/header";
+import { Providers } from "./redux/providers";
+import ThemeClient from "./components/theme-client";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="dark" lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <ThemeClient />
+            <div className="bg-white dark:bg-zinc-800">
+              <div className="min-h-screen mx-auto px-3 sm:px-8 xl:px-32 lg:px-16">
+                <Header />
+                {children}
+              </div>
+            </div>
+        </Providers>
       </body>
     </html>
   );

@@ -32,7 +32,7 @@ export default function ChangingTitle() {
 
   return (
     <div className="">
-      <h1 className="text-xl md:text-4xl font-bold text-gray-800 mb-4">
+      <h1 className="text-xl md:text-4xl font-bold mb-4">
         I am into{" "}
         <span className="relative inline-block text-blue-600">
           <span className="animate-typing border-r-4 border-blue-600 pr-1 animate-blink">{displayText}</span>
